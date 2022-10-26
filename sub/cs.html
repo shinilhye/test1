@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오설록</title>
+
+
+    <!-- 오픈그래프 -->
+    <!-- 모든페이지에 작성 -->
+
+    <meta property="og:title" content="오설록">
+    <meta property="og:url" content="http://test.dothome.co.kr"><!-- 도메인주소 -->
+    <meta property="og:description" content="차와 제주가 선사하는 삶의 아름다움, 오설록"><!-- 사이트에 관한 간단한 설명 - 검색에 걸림 -->
+    <meta property="og:image" content="images/common/og_img.jpg"><!-- 정해진 크기는 없음 / ***비율은 정해져있다 가로 2 세로 1 2:1 -->
+
+
+    <!-- 파비콘 -->
+    <!-- 모든페이지에 작성 -->
+
+    <link href="../images/common/osulloc_favi.ico" rel="shortcut icon"><!-- 경로잡아주기 -->
+
+
+
+    <!-- 폰트 -->
+
+    <link href="../css/font.css" rel="stylesheet"> <!-- 한글 -->
+    <!-- 경로잡아주기 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans+KR&family=Philosopher:wght@400;700&display=swap"
+        rel="stylesheet"> <!-- 영문 -->
+
+
+
+    <!-- css -->
+
+    <link rel="stylesheet" href="../css/common.css"> <!-- 경로잡아주기 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- 서버에 올라가져있는거를 떙겨서 쓰는 cdn방식으로적용 아이콘폰트(부트스트랩) -->
+    <!--     <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
+    <!-- 서브페이지에서는 필요없음 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- 순서중요 -->
+    <!-- 서브에서도 요즘 모션들어감  -->
+    <link rel="stylesheet" href="../css/sub.css"> <!-- main css에 거는게 아니고 sub css를 만들어줘야됨 -->
+
+
+    <!-- js -->
+
+    <script src="../js/jquery-3.6.0.min.js"></script> <!-- 경로잡아주기 -->
+    <!--  <script src="js/swiper-bundle.min.js"></script> -->
+    <!-- 서브페이지에서는 필요없음 -->
+    <script src="../js/common.js"></script> <!-- 경로잡아주기 , 클래스명에 따로 동작이 들어가있기 때문에 그냥 쓰면됨 -->
+
+
+</head>
+
+
+<body>
+    <div id="popup">
+        <a href="#">지금 회원가입하면 3천원 할인 쿠폰 증정!</a>
+        <i class="bi bi-x popup_close" aria-label="상단팝업닫기"></i> <!-- class 이름붙히기 popup_close -->
+    </div><!-- popup -->
+
+
+    <div id="wrap">
+        <div class="all_wrap">
+            <h2>sitemap</h2>
+            <div class="all_close"><img src="images/common/btn_close.jpg" alt="사이트맵 닫기"></div><!-- all_close -->
+
+        </div><!-- all_wrap -->
+
+        <header id="header">
+
+            <div class="inner">
+
+
+                <h1><a href="../index.html"><img src="../images/common/logo.png" alt="오설록"> </a></h1>
+
+                <nav>
+
+                    <ul class="gnb">
+
+                        <li><a href="sub/brand.html">브랜드</a>
+                            <ul class="depth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+                        <li><a href="sub/product.html">제품</a>
+                            <ul class="depth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+                        <li><a href="sub/life.html">다다일상</a>
+                            <ul class="depth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+                        <li><a href="sub/cs.html">고객센터</a>
+                            <ul class="depth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+
+                    </ul><!-- gnb -->
+
+                </nav>
+
+
+                <ul class="util">
+
+                    <li class="search"><img src="../images/common/icon_search.svg" alt="검색"></li>
+                    <li class="all_menu"><img src="../images/common/icon_menu.svg" alt="사이트맵"></li>
+                    <li class="ham"><img src="../images/common/icon_menu.svg" alt="모바일메뉴보기"></li>
+                    <!-- 똑같은게 두개들어가야함 - 하나는 pc에서 사이트맵으로 보이게 하고 하나는 모바일에서 모달팝업으로 보이게함 -->
+                    <li><a href="#"><img src="../images/common/icon_bag.svg" alt="장바구니"></a></li>
+                    <li class="language"><a href="#">KOREAN <i class="down bi bi-caret-down-fill"></i></a>
+                        <ul>
+                            <li><a href="./html/en/index.html">ENGLISH</a></li>
+                            <li><a href="./html/cn/index.html">CHINESE</a></li>
+                        </ul>
+                    </li>
+                </ul><!-- util -->
+
+            </div><!-- inner -->
+
+            <div class="depth2_bg"></div><!-- depth2_bg -->
+
+
+
+
+
+
+            <div class="mgnb_wrap">
+
+                <div class="m_inner">
+
+
+                    <ul class="mgnb">
+
+                        <li>브랜드
+                            <ul class="mdepth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+                        <li>제품
+                            <ul class="mdepth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+                        <li>다다일상
+                            <ul class="mdepth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- depth2 -->
+                        </li>
+                        <li>고객센터
+                            <ul class="mdepth2">
+                                <li><a href="sub/brand.html">브랜드</a></li>
+                                <li><a href="sub/product.html">제품</a></li>
+                                <li><a href="sub/life.html">다다일상</a></li>
+                                <li><a href="sub/cs.html">고객센터</a></li>
+                            </ul><!-- mdepth2 -->
+                        </li>
+
+                    </ul><!-- mgnb -->
+
+                    <div class="mgnb_close">
+                        <i class="bi bi-x" aria-label="모바일메뉴닫기"></i>
+
+                    </div><!-- mgnb_close -->
+
+
+
+
+
+                </div><!-- minner -->
+
+            </div><!-- mgnb_wrap -->
+        </header><!-- header -->
+
+
+
+
+
+        <!-- header와 footer은 공통역역 main만 sub_container로 바꾸고 내용 바꿔주기 -->
+
+        <div id="sub_container">
+
+            <div class="sub_visual">
+                <h2>CS CENTER</h2> <!-- 높이값을 줘도되고 padding을 위아래값 줘도됨 -->
+            </div><!-- sub_visual -->
+
+
+
+            <div class="contents">
+
+                <div class="inner">
+
+
+                    <div class="notice">
+                        <!-- 스타일만 잡아주고 코드입히는건 프로그래머가함 -->
+
+                        <form>
+
+                            <fieldset>
+
+                                <legend>공지사항 검색영역</legend>
+                                <select>
+                                    <option>전체</option>
+                                    <option>제목</option>
+                                    <option>내용</option>
+                                </select>
+
+                                <input type="text">
+                                <input type="submit" value="검색">
+
+                            </fieldset>
+
+                        </form>
+
+
+                        <table>
+                         <!--    <colgroup>  
+                            <col style="width:10%;"> 
+                            <col style="width:70%;">
+                            <col style="width:10%;"> 
+                            <col style="width:10%;">
+                            </colgroup> -->
+                            <tr>
+
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+                            </tr>
+
+                            <tr>
+                                <td>100</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>99</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>98</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>97</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>96</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td>95</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td>94</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>93</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>92</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>91</td>
+                                <td><a href="#">[공지] 오설록몰 개인정보처리방침 일부 변경</a></td>
+                                <td>2022.03.05</td>
+                                <td>100</td>
+                            </tr>
+
+
+                        </table>
+
+
+
+                    </div><!-- notice -->
+
+
+
+
+
+
+
+
+
+
+
+
+                </div><!-- inner -->
+
+
+            </div><!-- contents -->
+
+
+
+
+        </div><!-- sub_container -->
+
+
+
+
+        <footer id="footer">
+
+            <div class="inner">
+
+                <div class="footer_top">
+
+                    <ul class="clearfix">
+                        <li><a href="#">비회원주문조회</a></li>
+                        <li><a href="#">매장찾기</a></li>
+                        <li><a href="#">멤버십</a></li>
+                        <li><a href="#">뷰티포인트</a></li>
+                    </ul>
+
+
+                    <p class="call">
+                        고객상담센터 · 주문/배송문의 <br>
+                        <span>080-805-5555</span>
+                    </p><!-- call -->
+
+
+                </div><!-- footer_top -->
+
+
+
+                <div class="footer_bottom">
+
+                    <div class="footer_txt">
+
+
+                        <ul class="clearfix">
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">서비스이용약관</a></li>
+                            <li><a href="#">이메일무단수집거부</a></li>
+                            <li><a href="#">영상기기관리방침</a></li>
+
+                        </ul>
+
+
+                        <address>
+                            서울특별시 용산구 한강대로 100, 14층(한강로2가)<br>
+                            대표이사 : 서혁제<br>
+                            사업자등록번호 : 390-87-01499<br>
+                            통신판매업신고번호 : 2019-서울용산-1173호
+                        </address>
+
+
+                    </div><!-- footer_txt -->
+
+                    <p class="copy">Copyright @ 2021 OSULLOC. All Rights Reserved.</p>
+
+
+
+                </div><!-- footer_bottom -->
+
+
+
+            </div><!-- inner -->
+        </footer><!-- footer -->
+
+
+
+
+
+       
+
+
+
+    </div><!-- wrap -->
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init(); /* 실행시키는 매서드 -스와이퍼의 콘스트 뭐시기랑 비슷  */
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+body {font-family: 'LeferiBase', sans-serif; font-size: 1.6rem; line-height: 1.5; color: #000;}
+
+.clearfix:after {content: ''; display: block; clear: both;}
+
+.inner {max-width: calc(100% - 200px); margin: 0 auto;} /* 왼쪽 100px 오른쪽 100px 제외한 크기 */
+.inner_100 {max-width: 100%; margin: 0 auto;} /* inner size 100% */
+
+@media (max-width:1600px) {
+    .inner {max-width: calc(100% - 160px);} /* 패딩 왼쪽 80 오른쪽 80 */
+}
+
+@media (max-width:1400px) {
+    .inner {max-width: calc(100% - 140px);} /* 패딩 왼쪽 70 오른쪽 70 */
+}
+
+@media (max-width:1200px) {
+    .inner {max-width: calc(100% - 120px);} /* 패딩 왼쪽 60 오른쪽 60 */
+}
+
+@media (max-width:1024px) {
+    .inner {max-width: calc(100% - 100px);} /* 패딩 왼쪽 50 오른쪽 50 */
+}
+
+@media (max-width:768px) {
+    .inner {max-width: calc(100% - 40px);} /* 패딩 왼쪽 20 오른쪽 20 */
+}
+
+
+
+/* popup */
+#popup {background: #a89079; text-align: center; padding: 10px 0 5px; position: relative;}
+#popup a {color: #fff; font-size: 1.4rem;}
+#popup .popup_close {position: absolute; right: 10px; top: 8px; font-size: 2rem; color: #fff; cursor: pointer;}
+
+
+
+/* all_wrap */
+.all_wrap {position: fixed; left: 0; top: 0; width: 100% ; height: 100%; background: #67625e; z-index: 9999; }
+.all_wrap .all_close {position: absolute; right: 0; top: 0; cursor: pointer;}
+
+
+
+
+
+
+
+/* header */
+
+#header {position: relative;}
+#header .inner {display: flex; justify-content: space-between; height: 80px; align-items: center; padding-top: 10px;}
+#header h1 img {display: block;} /* block으로 처리해서 로고의 line-height값 제거  */
+
+
+#header .gnb > li {float: left; position: relative; z-index: 999;} /* display none 이랑 flex 같이 안쓰므로 float 써주는게 좋음 */
+#header .gnb > li:before {content: ''; width: 8px; height: 8px; background: #758246; border-radius: 50%; display: block; position: absolute; left: 50%; top: -20px; opacity: 0; transition: top
+    0.3s, opacity 0.3s;}
+#header .gnb > li:hover:before {top: -5px; opacity: 1;}
+#header .gnb > li > a {display: block; padding: 10px 40px 5px; font-size: 2rem;}
+#header .gnb > li:hover > a {color: #758246;}
+
+
+
+#header .util > li {float: left; padding: 10px;} 
+#header .util > li img {width: 20px;}
+#header .util .language a {color: #999; font-size: 1.2rem;}
+#header .util .language ul {position: absolute; background: #ff0; z-index: 100; padding: 20px; transform: translateX(-20px);}
+#header .util .language .down.active:before {transform: rotate(180deg);} /* 다운이라는 클래스에 액티브라는 클래스 추가 - 띄어쓰기 x */
+/* 개발자도구 검사 했더니 아이콘이 before로 해서 들어가져있어서 선택자를 before로 적어주고 마우스 클릭했을떄 회전값을 적어줘야함  */
+
+/* 햄버거 버튼으로 pc 사이트맵  모바일 햄버거버튼  */
+
+#header .util .ham {display: none;}
+
+
+
+/* gnb */
+
+#header .gnb > li .depth2 {position: absolute;  width: 700px; top: 70px;}
+#header .gnb > li .depth2 li {float: left;}
+#header .gnb > li .depth2 li a {display: block; padding: 10px 10px 5px; color: #fff;}
+
+
+/* depth2_bg */
+#header .depth2_bg {width: 100%; position: absolute; left: 0; top:80px; height: 60px; background: #758246; z-index: 199;}
+
+
+/* .mgnb_wrap 모바일 메뉴*/ 
+#header .mgnb_wrap {position: fixed; left: 100%; top: 0; width: 100%; height: 100%; background: #fff; z-index: 99999; padding-top: 50px;}
+ /* left: 100%; 으로주면 브라우저 밖으로 넘어가있음 /햄버거 메뉴 누르면 왼쪽으로 이동하게 만들기 */
+#header .mgnb_wrap .m_inner {max-width: calc(100% - 40px); margin: 0 auto;}
+#header .mgnb_wrap .mgnb {border-top: 1px solid #000;}
+#header .mgnb_wrap .mgnb > li {border-bottom: 1px solid #ddd; padding: 15px 0 10px; font-size: 2rem;}
+
+
+#header .mdepth2 {padding: 10px;}
+#header .mdepth2 > li { font-size: 1.4rem; position: relative; padding-left: 15px;}
+#header .mdepth2 > li:before {content: ''; width: 5px; height: 5px; background: #999; border-radius: 50%; display: block; position: absolute; left: 0; top: 50%; margin-top: -4px;}
+#header .mdepth2 > li > a {color: #999;}
+
+
+
+#header .mgnb_wrap .mgnb_close {position: absolute; cursor: pointer; right: 20px; top: 20px; font-size: 3rem;}
+
+
+
+
+@media (max-width:1200px){
+    #header .gnb {display: none;}
+
+}
+
+/* 1200 밑의 해상도에서는 자동으로 디스플레이 넌으로 잡힘 중복기입 필요없음  */
+
+@media (max-width:1024px){
+    #header h1 img {width: 70px;}
+    #header .util .all_menu {display: none;} /* 햄버거 버튼으로 pc 사이트맵  모바일 햄버거버튼  */
+    #header .util .ham {display: block;} 
+}
+
+
+
+@media (max-width:768px){
+    #header .util .language {display: none;}
+    /* 햄버거 버튼으로 pc 사이트맵  모바일 햄버거버튼  */
+
+}
+
+
+/* header와 footer은 살려주고 main만 삭제 */
+
+/* sub */
+
+.sub_visual {background: url(../images/sub/sv_cs.jpg) no-repeat center 0; padding: 100px 0;}
+.sub_visual h2 {font-size: 4rem; color: #fff; text-align: center;}
+
+
+.contents {padding:200px;}
+
+@media (max-width:1600px){
+    .contents {padding:160px;}
+}
+
+@media (max-width:1400px){
+    .contents {padding:140px;}
+}
+
+@media (max-width:1024px){
+    .contents {padding:100px;}
+}
+
+@media (max-width:768px){
+    .contents {padding:50px 0px;} /* inner에 좌우 padding 20이 이미 들어가있는 상태 */
+}
+
+
+
+
+
+/* 폼은 block요소 */
+/* 폼테그 안의 하나하나 요소들은 성격이 inline-block 요소 (자기영역이있고 padding margin 적용가능) /한라인에 있는애들 높이값 똑같이 주기 -반드시 동일하게!! */
+/* 폼요소들 약간씩 px 틀어짐 -원래그럼 / 잡아주기 위해서 common css 속성추가 vertical-align: middle;  */
+
+
+/* 폼요소 */
+.notice form {text-align: right; padding-bottom: 30px;}
+.notice select {border: 1px solid #ddd; width: 80px; height: 30px;}
+.notice input[type="text"] {border: 1px solid #ddd; width: 150px; height: 30px;} /* 대괄호사용 */
+.notice input[type="submit"] {background: #333; color: #fff; width: 50px; height: 30px;}
+
+
+
+
+/* 테이블요소 */
+ .notice table {border-top:1px solid #000;}
+ .notice table th {border-bottom: 1px solid #ddd; padding: 25px 0 15px;} /* 아래쪽에 line-height가 많이들어가는 폰트여서 위아래 padding값따로준거 */
+ .notice table td {border-bottom: 1px solid #eee; padding: 20px 0 10px;}
+
+ /* 두번째 td를 제외한 나머지:not 는 text-align center */
+ .notice table tr td:not(:nth-child(2)) {text-align: center;}
+
+ .notice table tr td:nth-child(1) {width: 10%;}
+ .notice table tr td:nth-child(2) {width: 70%;}
+ .notice table tr td:nth-child(3) {width: 10%;}
+ .notice table tr td:nth-child(4) {width: 10%;}
+
+/* 번호랑 조회수 부분없애기 */ /* 요소를 지칭하지않고 몇번째라고 하면 tr th 의 첫번째 네번째 지칭한거임 */
+/* 근데 이렇게하면 a 태그도 같이잡혀서 안보여서 밑에처럼 바꾸어주었음 */
+
+@media (max-width:768px) {
+    .notice table tr th:nth-child(1), .notice table tr td:nth-child(1) {display: none;}
+    .notice table tr th:nth-child(4), .notice table tr td:nth-child(4){display: none;}
+    .notice table {font-size: 1.4rem;}
+}
+
+
+
+
+
+
+
+
+/* footer */
+
+#footer {background: #eee; padding: 100px 0; font-size: 1.4rem;}
+#footer .footer_top {border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; padding-bottom: 20px; align-items: flex-end; flex-wrap: wrap;} /* 왼쪽끝 오른쪽 끝으로 보냄 - width 지정필요없음 /// 밑에라인에 딱맞춰서 아래쪽기준해서 정렬 */
+#footer .footer_top ul li {float: left; padding-right: 20px;}
+#footer .footer_top .call {text-align: right;}
+#footer .footer_top .call span {color: #758246; font-size: 3rem; font-family: 'Philosopher', sans-serif; font-weight: 700;}
+
+#footer .footer_bottom {display: flex; justify-content: space-between; padding-top: 50px; flex-wrap: wrap;}
+#footer .footer_bottom ul li {float: left;  padding-right: 20px;}
+#footer .footer_bottom address {color: #999; padding-top: 30px;} 
+#footer .footer_bottom .copy {color: #999;} 
+
+
+
+
+
+@media (max-width:768px){
+    #footer {padding: 50px;}
+    #footer .footer_top .call {text-align: left; padding-top: 10px;}  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

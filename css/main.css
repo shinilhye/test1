@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+body {font-family: 'LeferiBase', sans-serif; font-size: 1.6rem; line-height: 1.5; color: #000;}
+
+.clearfix:after {content: ''; display: block; clear: both;}
+
+.inner {max-width: calc(100% - 200px); margin: 0 auto;} /* 왼쪽 100px 오른쪽 100px 제외한 크기 */
+.inner_100 {max-width: 100%; margin: 0 auto;} /* inner size 100% */
+
+@media (max-width:1600px) {
+    .inner {max-width: calc(100% - 160px);} /* 패딩 왼쪽 80 오른쪽 80 */
+}
+
+@media (max-width:1400px) {
+    .inner {max-width: calc(100% - 140px);} /* 패딩 왼쪽 70 오른쪽 70 */
+}
+
+@media (max-width:1200px) {
+    .inner {max-width: calc(100% - 120px);} /* 패딩 왼쪽 60 오른쪽 60 */
+}
+
+@media (max-width:1024px) {
+    .inner {max-width: calc(100% - 100px);} /* 패딩 왼쪽 50 오른쪽 50 */
+}
+
+@media (max-width:768px) {
+    .inner {max-width: calc(100% - 40px);} /* 패딩 왼쪽 20 오른쪽 20 */
+}
+
+
+
+/* popup */
+#popup {background: #a89079; text-align: center; padding: 10px 0 5px; position: relative;}
+#popup a {color: #fff; font-size: 1.4rem;}
+#popup .popup_close {position: absolute; right: 10px; top: 8px; font-size: 2rem; color: #fff; cursor: pointer;}
+
+
+
+/* all_wrap */
+.all_wrap {position: fixed; left: 0; top: 0; width: 100% ; height: 100%; background: #67625e; z-index: 9999; }
+.all_wrap .all_close {position: absolute; right: 0; top: 0; cursor: pointer;}
+
+
+
+
+
+
+
+/* header */
+
+#header {position: relative;}
+#header .inner {display: flex; justify-content: space-between; height: 80px; align-items: center; padding-top: 10px;}
+#header h1 img {display: block;} /* block으로 처리해서 로고의 line-height값 제거  */
+
+
+#header .gnb > li {float: left; position: relative; z-index: 999;} /* display none 이랑 flex 같이 안쓰므로 float 써주는게 좋음 */
+#header .gnb > li:before {content: ''; width: 8px; height: 8px; background: #758246; border-radius: 50%; display: block; position: absolute; left: 50%; top: -20px; opacity: 0; transition: top
+    0.3s, opacity 0.3s;}
+#header .gnb > li:hover:before {top: -5px; opacity: 1;}
+#header .gnb > li > a {display: block; padding: 10px 40px 5px; font-size: 2rem;}
+#header .gnb > li:hover > a {color: #758246;}
+
+
+
+#header .util > li {float: left; padding: 10px;} 
+#header .util > li img {width: 20px;}
+#header .util .language a {color: #999; font-size: 1.2rem;}
+#header .util .language ul {position: absolute; background: #ff0; z-index: 100; padding: 20px; transform: translateX(-20px);}
+#header .util .language .down.active:before {transform: rotate(180deg);} /* 다운이라는 클래스에 액티브라는 클래스 추가 - 띄어쓰기 x */
+/* 개발자도구 검사 했더니 아이콘이 before로 해서 들어가져있어서 선택자를 before로 적어주고 마우스 클릭했을떄 회전값을 적어줘야함  */
+
+/* 햄버거 버튼으로 pc 사이트맵  모바일 햄버거버튼  */
+
+#header .util .ham {display: none;}
+
+
+
+/* gnb */
+
+#header .gnb > li .depth2 {position: absolute;  width: 700px; top: 70px;}
+#header .gnb > li .depth2 li {float: left;}
+#header .gnb > li .depth2 li a {display: block; padding: 10px 10px 5px; color: #fff;}
+
+
+/* depth2_bg */
+#header .depth2_bg {width: 100%; position: absolute; left: 0; top:80px; height: 60px; background: #758246; z-index: 199;}
+
+
+/* .mgnb_wrap 모바일 메뉴*/ 
+#header .mgnb_wrap {position: fixed; left: 100%; top: 0; width: 100%; height: 100%; background: #fff; z-index: 99999; padding-top: 50px;}
+ /* left: 100%; 으로주면 브라우저 밖으로 넘어가있음 /햄버거 메뉴 누르면 왼쪽으로 이동하게 만들기 */
+#header .mgnb_wrap .m_inner {max-width: calc(100% - 40px); margin: 0 auto;}
+#header .mgnb_wrap .mgnb {border-top: 1px solid #000;}
+#header .mgnb_wrap .mgnb > li {border-bottom: 1px solid #ddd; padding: 15px 0 10px; font-size: 2rem;}
+
+
+#header .mdepth2 {padding: 10px;}
+#header .mdepth2 > li { font-size: 1.4rem; position: relative; padding-left: 15px;}
+#header .mdepth2 > li:before {content: ''; width: 5px; height: 5px; background: #999; border-radius: 50%; display: block; position: absolute; left: 0; top: 50%; margin-top: -4px;}
+#header .mdepth2 > li > a {color: #999;}
+
+
+
+#header .mgnb_wrap .mgnb_close {position: absolute; cursor: pointer; right: 20px; top: 20px; font-size: 3rem;}
+
+
+
+
+@media (max-width:1200px){
+    #header .gnb {display: none;}
+
+}
+
+/* 1200 밑의 해상도에서는 자동으로 디스플레이 넌으로 잡힘 중복기입 필요없음  */
+
+@media (max-width:1024px){
+    #header h1 img {width: 70px;}
+    #header .util .all_menu {display: none;} /* 햄버거 버튼으로 pc 사이트맵  모바일 햄버거버튼  */
+    #header .util .ham {display: block;} 
+}
+
+
+
+@media (max-width:768px){
+    #header .util .language {display: none;}
+    /* 햄버거 버튼으로 pc 사이트맵  모바일 햄버거버튼  */
+
+}
+
+
+/* 공통요소 */
+#container  section {margin: 0 0 200px;}
+#container .sub_title h2 {font-size: 6rem; font-family: 'Philosopher', serif;} 
+#container .sub_title p {color: #999;}
+
+
+
+
+/* container */
+
+
+/* 공통버튼 */
+
+#container .btn_more a {display: inline-block; padding: 15px 40px 10px; border: 1px solid #000; color: #000; border-radius: 5px; transition: background 0.5s, color 0.5s;}
+#container .btn_more a:hover {background: #67625e; color: #fff; border: 1px solid #67625e;}
+
+
+@media (max-width:1200px) {
+
+
+    #container  section {margin: 0 0 150px;}
+    #container .sub_title h2 {font-size: 5rem; } /* 값이 바뀌는 부분만 넣으면 됨 */
+    #container .btn_more a { padding: 15px 30px 5px; font-size: 1.4rem;}
+    
+
+}
+
+
+@media (max-width:768px) {
+
+
+    #container  section {margin: 0 0 100px;}
+    #container .sub_title h2 {font-size: 4rem; } /* 값이 바뀌는 부분만 넣으면 됨 */
+  
+    
+
+}
+
+
+/* 배너 */
+
+
+#main_banner ul li {height: 625px;}
+#main_banner ul li.mb1 {background: url('../images/main/mb1_bg.jpg') no-repeat center center; background-size: cover;}
+#main_banner ul li.mb2 {background: url('../images/main/mb2_bg.jpg') no-repeat center center; background-size: cover;} /* 비율에 맞춰서 화면에 꽉차게 - 넘는 부분은 잘려보임 ㅎㅎ */
+
+
+#main_banner ul li .mb_txt { height: 625px; display: flex; flex-direction: column; justify-content: center;
+text-align: center;} /* 글자세로정렬 -주축 세로축*/ /* 주축 세로축을 기준으로 센터정리 */
+#main_banner ul li .mb_txt p {font-size: 2rem;} /* 20px */
+#main_banner ul li .mb_txt h2 {font-size: 5rem; padding: 20px 0 30px;}
+#main_banner ul li .mb_txt .btn_more {margin-top: 30px;}
+
+#main_banner ul li .mb_txt br {display: none;}
+
+
+#main_banner .arrow {width: 70px; height: 70px; margin-top: -35px;}
+#main_banner .arrow:after {display: none;}
+#main_banner .prev {background: rgba(0,0,0,0.3) url('../images/main/btn_prev.png') no-repeat center center; left: 0; transition: transform 0.5s;}
+#main_banner .prev:hover {background: rgba(0,0,0,1) url('../images/main/btn_prev.png') no-repeat center center; left: 0; transform: translateX(20px);}
+#main_banner .next {background: rgba(0,0,0,0.3) url('../images/main/btn_next.png') no-repeat center center; right: 0;}
+#main_banner .next:hover {background: rgba(0,0,0,1) url('../images/main/btn_next.png') no-repeat center center; right: 0;}
+
+
+#main_banner .swiper-pagination {bottom: 30px;}
+#main_banner .mb_play,#main_banner .mb_pause {position: absolute; left: 50%; bottom: 27px; z-index: 99; transform: translateX(30px); font-size: 2rem; cursor: pointer; }
+/* 부트스트랩 cdn (폰트형식으로 만들어진 아이콘이므로 색상은 color 크기는 font-size 로 조정 ) */
+
+
+@media (max-width:1200) {
+#main_banner ul li {height: 500px;}
+#main_banner ul li .mb_txt {height: 500px;}
+#main_banner ul li .mb_txt p {font-size: 1.6rem;}
+#main_banner ul li .mb_txt h2 {font-size: 3.6rem;}
+
+}
+
+
+/* br 모바일 2줄 pc한줄 */
+@media (max-width:768px) {
+
+    #main_banner ul li .mb_txt br {display: block; word-break: keep-all;}
+    #main_banner .arrow {display: none;} /* 모바일에서는 터치해서 넘기기때문에 prev next 버튼 필요옶음 */
+    }
+
+
+
+/* product */
+
+#product {text-align: center;}
+#product ul {padding: 50px 0;}
+
+#product ul li {transform: scale(0.8); transition: transform 0.5s;} /* 작아져있다가 중앙으로 오면서 원래크기로 되돌리면 중앙에 오는게 커지는것 처럼 보임  */
+#product ul li.swiper-slide-active {transform: scale(1,1);} /* 개발자 도구 들어가면 나오는 클래스 - 스와이퍼 번들에 정의되어있음 scale 1,1 원래크기로 돌아오라는 뜻  */
+
+#product ul li .thumbnail {background: #eee; position: relative;}
+#product ul li .thumbnail img {display: block; width: 100%;} /* li 크기 계산안해도 슬라이드가 알아서 분할해서 들어감*/
+#product ul li .thumbnail img:nth-child(2) {position: absolute; left: 0; top: 0; opacity: 0; transition: opacity 0.5s; background: #eee;}
+#product ul li:hover .thumbnail img:nth-child(2) {opacity: 1;} /* hover했을떄 잎이 위로나오게 */
+#product ul li .thumbnail i {position: absolute; right: 20px; top: 20px;}
+
+#product ul li h3 {padding: 30px 0 10px; font-weight: 400;}
+#product ul li p {color: #999;}
+
+#product .swiper-scrollbar {width: 80%; left: 50%; transform: translateX(-50%);}
+#product .swiper-scrollbar-drag {background: #758246;}
+
+
+#product .btn_more {margin-top: 50px;}
+
+
+
+/* teaware */
+
+
+#teaware .inner {display: flex; flex-wrap: wrap;}
+#teaware .sub_title {width: 26.423%} /* 450px */
+#teaware .teaware_brand {width: calc(100% - 26.423%); position: relative; height: 500px;}  /* 이미지 앱솔로트 한것의 기준 */
+
+
+#teaware .brand_list li {float: left; padding-right: 40px;} /* 탭 제목들은 플롯되고  */
+#teaware .brand_list li span {font-size: 2rem; display: inline-block; cursor: pointer; }
+#teaware .brand_list li.active span {border-bottom: 3px solid #a89079; color: #a89079;}/* :hover 대신 클래스 붙혀줌 .active */
+
+
+#teaware .brand_img img {width: 100%; height: 100%; object-fit: cover; display: block;} /* line-height 적용되지않도록 display block */
+#teaware .brand_list li .brand_img {position: absolute; left: 0; top: 50px; opacity: 0; transition: opacity 0.5s; height: 450px;} /* 이미지는 앱솔루트로 띄어서 지정위치에 고정 - but 높이처리가 안됨 - 밑에오는 요소들이 겹쳐지게 되서 높이값을 주고 처리해야함*/
+/* 4개의 사진 다 opacity 0으로 처리하고 각 요소를 클릭했을떄 1로 바꾸어서 보이도록 처리  */
+#teaware .brand_list li.active .brand_img {opacity: 1;} /* :hover 대신 클래스 붙혀줌 .active  main.js에서 active 클래스 추가하면됨*/
+
+
+@media (max-width:1400px){
+
+    #teaware .sub_title {width: 100%; text-align: center; padding-bottom: 30px;} /* 450px */ /* 화면을 줄여도 공간이 들어감 */
+    #teaware .teaware_brand {width: 100% ;} /* 선택자는 반드시 그대로 써야되고 속성은 바뀌는 부분만 쓰면됨  */
+
+
+}
+
+
+@media (max-width:1024px){
+
+    #teaware .teaware_brand { height: 450px;}
+    #teaware .brand_list li {padding-right: 20px;}
+    #teaware .brand_list li span {font-size: 1.6rem;}
+    #teaware .brand_list li .brand_img { height: 400px;}
+  
+}
+
+
+/* story */
+
+#story {height: 600px; overflow: hidden; position: relative;} 
+
+#story video {width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0;} /* 영역에 꽉차게 object-fit: cover;  */
+#story .sub_title {width: 100%; height: 100% ; position: absolute;  left: 0; top: 0; background: rgba(0,0,0,0.5); text-align: center; color: #fff; display: flex; flex-direction: column; justify-content: center;} /* flex시켜서 가로배치 후 글자정렬 수직으로 배치해주고 세로중앙에배치  주축-세로 */
+
+#story .sub_title .btn_more a {color: #fff; border: 1px solid #fff; transition: background 0.5s, color 0.5s; margin-top: 30px;} 
+#story .sub_title .btn_more:hover a {background: #fff; color: #000;}
+
+
+
+
+
+
+@media (max-width:1024px){
+
+    #story {height: 500px;} 
+  
+}
+
+
+/* insta */
+
+#insta .inner {display: flex; flex-wrap: wrap; position: relative;}
+#insta .sub_title {width: 26.423%} /* 450px */
+#insta .all_grid {width: calc(100% - 26.423%); display: flex; justify-content: space-between;} /* 이미지 앱솔로트 한것의 기준 */
+#insta .all_grid .grid {width: calc((100% - 90px)/4);}
+
+#insta .all_grid .grid_article {padding: 0 0 50px;}
+#insta .all_grid .grid img {width: 100%;}
+#insta .all_grid .grid dt {font-size: 1.8rem; padding: 10px 0;}
+#insta .all_grid .grid dd {color: #999;  padding: 10px 0;}
+
+#insta .btn_more {position: absolute; left: 0; top: 200px;}
+
+
+/* max-width의 기준은 화면을 줄이다가 구조가 틀어지는 시점으로 하면 좋다 */
+@media (max-width:1200px){
+    #insta .sub_title {width: 100%; text-align: center; padding-bottom: 30px;}
+    #insta .all_grid {width: 100%;}
+    #insta .btn_more {position: static; text-align: center; width: 100%; } /* static이 기본값으로 설정해줌- 원래있던 위치로 돌아감 */ /* 앞에 앱솔루트 처리가 되있어서 width 잡아줘야됨 */
+}
+
+
+
+@media (max-width:1024px){
+
+    #insta .all_grid .grid {width: calc((100% - 30px)/2);} /* 중간 30px을 제외하고 2등분되는 영역을 차지하게 */
+    #insta .all_grid .grid:nth-child(n+3) {display:none;}  /* nth-child 3부터 마지막까지 */
+    #insta .all_grid .grid dt {font-size: 1.6rem;}
+    #insta .all_grid .grid dd {font-size: 1.4rem;}
+}
+
+
+
+
+
+/* museum */
+
+
+#museum {text-align: center;}
+#museum .museum_list {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 50px;}
+#museum .museum_list li {width: calc((50% - 40px)/2);color: #fff; height: 450px; transition: width 1s; display: flex; flex-direction: column; justify-content: center;}
+#museum .museum_list li.active {width:50%;}
+#museum .museum_list li:nth-child(1) {background: url('../images/main/museum_01.jpg') no-repeat center; background-size: cover;}
+#museum .museum_list li:nth-child(2) {background: url('../images/main/museum_02.jpg') no-repeat center; background-size: cover;}
+#museum .museum_list li:nth-child(3) {background: url('../images/main/museum_03.jpg') no-repeat center; background-size: cover;}
+
+
+#museum .museum_list li h3 {font-size: 2.4rem; font-weight: 400;}
+#museum .museum_list li p {padding: 20px 0; opacity: 0;}
+#museum .museum_list li.active p {opacity: 1;}
+
+#museum .btn_more a {color: #fff; border: 1px solid #fff; transition: background 0.5s, color 0.5s; margin-top: 30px;  opacity: 0;} 
+#museum  .btn_more a:hover {background: #fff; color: #000;} /* :hover을 .active로 변경 */
+
+
+#museum .museum_list li.active .btn_more a {opacity: 1;}
+
+
+
+@media (max-width:1200px){
+
+    #museum .museum_list li {width: calc((100% - 40px)/3); height: 350px;} /* .active 했을떄도 width 똑같이 만들어주기   */
+    #museum .museum_list li.active  {width: calc((100% - 40px)/3);}
+    #museum .museum_list li p {display: none;}
+    #museum .btn_more a { opacity: 1; margin-top: 30px;} 
+}
+
+
+
+@media (max-width:1024px){
+
+    #museum .museum_list li {width: 100%; height: 250px;} /* .active 했을떄도 width 똑같이 만들어주기   */
+    #museum .museum_list li.active  {width: 100%;}
+    #museum .museum_list li:nth-child(-n+2) {margin-bottom: 20px;} /* nth-child 1번부터 2번까지 */
+}
+
+
+
+
+/* footer */
+
+#footer {background: #eee; padding: 100px 0; font-size: 1.4rem;}
+#footer .footer_top {border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; padding-bottom: 20px; align-items: flex-end; flex-wrap: wrap;} /* 왼쪽끝 오른쪽 끝으로 보냄 - width 지정필요없음 /// 밑에라인에 딱맞춰서 아래쪽기준해서 정렬 */
+#footer .footer_top ul li {float: left; padding-right: 20px;}
+#footer .footer_top .call {text-align: right;}
+#footer .footer_top .call span {color: #758246; font-size: 3rem; font-family: 'Philosopher', sans-serif; font-weight: 700;}
+
+#footer .footer_bottom {display: flex; justify-content: space-between; padding-top: 50px; flex-wrap: wrap;}
+#footer .footer_bottom ul li {float: left;  padding-right: 20px;}
+#footer .footer_bottom address {color: #999; padding-top: 30px;} 
+#footer .footer_bottom .copy {color: #999;} 
+
+
+
+
+
+@media (max-width:768px){
+    #footer {padding: 50px;}
+    #footer .footer_top .call {text-align: left; padding-top: 10px;}  
+}
+
+
+
+
+
+/* 탑버튼 */
+
+.gotop {background: #000; color: #fff; position: fixed; right: 100px; bottom: 100px; padding: 20px; cursor: pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
